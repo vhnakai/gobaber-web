@@ -1,7 +1,7 @@
 import style from 'styled-components';
 import signUpBackgroundImg from '../../assets/sign-up-background.png';
 export const Container = style.div`
-  heignt: 100vh;
+  height: 100vh;
 
   display: flex;
   align-items: stretch;

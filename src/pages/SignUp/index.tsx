@@ -4,7 +4,7 @@ import { Form } from "@unform/web";
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 
-import getValidationErrors from '../../utils/getValidationErrors'
+import getValidationErrors from '../../utils/getValidationErrors';
 import logoImg from '../../assets/logo.svg';
 import {Container, Content, Background} from './styles';
 import Button from "../../components/Button";
@@ -13,8 +13,6 @@ import Input from "../../components/Input";
 
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
-
-  
 
   const handleSubmit = useCallback(async (data: object) => {
     try{
@@ -29,9 +27,8 @@ const SignUp: React.FC = () => {
       await schema.validate(data, {
         abortEarly: false,
       });
-
    
-    } catch(err){
+    } catch(err) {
       const errors = getValidationErrors(err);
       formRef.current?.setErrors(errors);
     }
