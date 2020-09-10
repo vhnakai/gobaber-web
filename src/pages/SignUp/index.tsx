@@ -13,6 +13,7 @@ import Input from '../../components/Input';
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
+  // eslint-disable-next-line @typescript-eslint/ban-types
   const handleSubmit = useCallback(async (data: object) => {
     try {
       formRef.current?.setErrors({});
@@ -29,8 +30,12 @@ const SignUp: React.FC = () => {
         abortEarly: false,
       });
     } catch (err) {
-      const errors = getValidationErrors(err);
-      formRef.current?.setErrors(errors);
+      if (err instanceof Yup.ValidationError) {
+        const errors = getValidationErrors(err);
+        formRef.current?.setErrors(errors);
+      }
+
+      // disparar um toast
     }
   }, []);
 
