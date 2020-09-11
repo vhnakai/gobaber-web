@@ -8,7 +8,7 @@ import api from '../../services/api';
 
 import getValidationErrors from '../../utils/getValidationErrors';
 import logoImg from '../../assets/logo.svg';
-import { Container, Content, AnimationContainer, Background } from './styles';
+import { Container, Content, Background } from './styles';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import { useToast } from '../../hooks/toast';
@@ -72,29 +72,27 @@ const SignUp: React.FC = () => {
   return (
     <Container>
       <Background />
-      <AnimationContainer>
-        <Content>
-          <img src={logoImg} alt="Gobaber" />
+      <Content>
+        <img src={logoImg} alt="Gobaber" />
 
-          <Form ref={formRef} onSubmit={handleSubmit}>
-            <h1>Faça seu Cadastro</h1>
-            <Input name="name" icon={FiUser} placeholder="nome" />
-            <Input name="email" icon={FiMail} placeholder="email" />
-            <Input
-              name="password"
-              icon={FiLock}
-              type="password"
-              placeholder="senha"
-            />
-            <Button type="submit">Cadastrar</Button>
-          </Form>
+        <Form ref={formRef} onSubmit={handleSubmit}>
+          <h1>Faça seu Cadastro</h1>
+          <Input name="name" icon={FiUser} placeholder="nome" />
+          <Input name="email" icon={FiMail} placeholder="email" />
+          <Input
+            name="password"
+            icon={FiLock}
+            type="password"
+            placeholder="senha"
+          />
+          <Button type="submit">Cadastrar</Button>
+        </Form>
 
-          <Link to="/">
-            <FiArrowLeft />
-            Voltar para Logon
-          </Link>
-        </Content>
-      </AnimationContainer>
+        <Link to="/">
+          <FiArrowLeft />
+          Voltar para Logon
+        </Link>
+      </Content>
     </Container>
   );
 };

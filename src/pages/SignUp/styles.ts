@@ -1,4 +1,4 @@
-import style, { keyframes } from 'styled-components';
+import style from 'styled-components';
 import signUpBackgroundImg from '../../assets/sign-up-background.png';
 
 export const Container = style.div`
@@ -16,26 +16,6 @@ export const Content = style.div`
   align-items: center;
   width: 100%;
   max-width: 700px;
-
-`;
-
-const appearFromLeft = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  } to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`;
-
-export const AnimationContainer = style.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  place-content: center;
-
-  animation: ${appearFromLeft} 1s;
 
   form {
     margin: 80px 0;
@@ -65,7 +45,7 @@ export const AnimationContainer = style.div`
     align-items: center;
 
     svg {
-      margin-right: 16px;
+      margin-left: 16px;
     }
   }
 `;
