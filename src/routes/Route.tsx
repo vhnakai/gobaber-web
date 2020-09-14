@@ -2,13 +2,13 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import {
-  RouteProps as ReactRouteProps,
+  RouteProps as ReactDOMRouteProps,
   Route as ReactDOMRoute,
   Redirect,
 } from 'react-router-dom';
 import { useAuth } from '../hooks/auth';
 
-interface RouteProps extends ReactRouteProps {
+interface RouteProps extends ReactDOMRouteProps {
   isPrivate?: boolean;
   component: React.ComponentType;
 }
