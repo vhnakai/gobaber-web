@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import signUpBackgroundImg from '../../assets/sign-up-background.png';
+import styled, { keyframes } from 'styled-components';
+import signInBackgroundImg from '../../assets/sign-in-background.png';
 
 export const Container = styled.div`
   height: 100vh;
@@ -15,6 +15,25 @@ export const Content = styled.div`
   align-items: center;
   width: 100%;
   max-width: 700px;
+`;
+
+const appearFromLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  } to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+export const AnimationContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  place-content: center;
+
+  animation: ${appearFromLeft} 1s;
 
   form {
     margin: 80px 0;
@@ -44,12 +63,19 @@ export const Content = styled.div`
     align-items: center;
 
     svg {
-      margin-left: 16px;
+      margin-right: 16px;
     }
   }
 `;
+
 export const Background = styled.div`
   flex: 1;
-  background: url(${signUpBackgroundImg}) no-repeat center;
+  background: url(${signInBackgroundImg}) no-repeat center;
   background-size: cover;
+
+  img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+  }
 `;
