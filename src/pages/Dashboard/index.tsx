@@ -236,8 +236,8 @@ const Dashboard: React.FC = () => {
             disabledDays={[
               {
                 daysOfWeek: [0, 6],
+                ...disabledDays,
               },
-              ...disabledDays,
             ]}
             modifiers={{ available: { daysOfWeek: [1, 2, 3, 4, 5] } }}
             selectedDays={selectedDate}
